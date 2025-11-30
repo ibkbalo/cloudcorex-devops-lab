@@ -15,4 +15,8 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`CloudCoreX Node API listening on port ${PORT}`);
+});// Introduce a bug on purpose
+app.get("/", (req, res) => {
+  throw new Error("Simulated crash in production");
 });
+
